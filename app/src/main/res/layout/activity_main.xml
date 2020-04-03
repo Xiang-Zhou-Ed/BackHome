@@ -9,17 +9,51 @@
 
     <EditText
         android:id="@+id/UserHome"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:hint="Please enter your home postcode"/>
+        android:layout_marginTop="5dp"
+        android:hint="Please enter your home postcode" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="150dp"
+        android:layout_alignParentRight="true"
         android:onClick="goToMap"
         android:text="Find Home!" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text="Save postcode"
+        android:layout_marginTop="100dp"
+        android:onClick="save"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="100dp"
+        android:text="Read postcode"
+        android:onClick="read"/>
+
+
+    <TextView
+        android:id="@+id/showtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:textSize="20dp"
+        android:text="Save postcode is"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:singleLine="false"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="Program user guild: \n 1.You can enter the postcode of home in this interface and save it. Clicking the 'FIND HOME' button will bring you to the map interface.
+        \n 2. In the map screen you will see two markers, one with a small blue dot below it is your current location and the other is your home address。
+        \n 3. Click on the marker marked 'My home' and there will be two icons at the bottom right of screen, clicking on the icon with the arrow to the right will take you to Google Maps and specifying the shortest path and expected time of arrival."/>
 
 </RelativeLayout>

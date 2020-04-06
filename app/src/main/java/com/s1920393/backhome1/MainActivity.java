@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -16,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     //Declare Sharedpreferenced object
     SharedPreferences mSpf;
     EditText editText;
+    String message;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,19 +34,19 @@ public class MainActivity extends AppCompatActivity {
         //Respond to the button
         Intent intent = new Intent(this, stratMap.class);
         //Get the string from text
-        String message = editText.getText().toString();
+        message = editText.getText().toString();
         //Put the data to intent
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
     }
 
     public void save(View view) {
-            //Get edit object
-            SharedPreferences.Editor editor = mSpf.edit();
-            //Write data through the editor object
-            editor.putString("addr", editText.getText().toString());
-            //Submit data to xml file
-            editor.commit();
+                //Get edit object
+                SharedPreferences.Editor editor = mSpf.edit();
+                //Write data through the editor object
+                editor.putString("addr", editText.getText().toString());
+                //Submit data to xml file
+                editor.commit();
     }
 
     public void read(View view) {
